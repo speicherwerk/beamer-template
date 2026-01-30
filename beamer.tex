@@ -1,0 +1,54 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{arrows,fit}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{diagbox}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage[backend=biber,style=authoryear,url=false,doi=false,isbn=false,eprint=false]{biblatex}
+\addbibresource{literatur.bib}
+
+\newcommand{\defeq}{\vcentcolon=}
+
+\title[Kurztitel]{Langer Titel}
+% \subtitle{}
+\author{Max Mustermann}
+\institute{Universität Leipzig}
+\date{\today}
+
+\AtBeginSection[]{
+    \begin{frame}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\AtBeginSubsection[]{
+    \begin{frame}
+        \tableofcontents[currentsubsection]
+    \end{frame}
+}
+
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    \begin{frame}
+        \tableofcontents
+    \end{frame}
+
+    \section{Literatur}
+    \begin{frame}[allowframebreaks]
+        \frametitle{Literatur}
+        % This will include *all* entries from your .bib file
+        \nocite{*}
+        \printbibliography
+    \end{frame}
+\end{document}
