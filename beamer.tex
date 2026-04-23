@@ -1,5 +1,5 @@
 \documentclass{beamer}
-\usetheme{metropolis}
+\usetheme[progressbar=frametitle]{moloch}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
@@ -12,8 +12,11 @@
 \usepackage{diagbox}
 \usepackage{pgfplots}
 \usepackage{graphicx}
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{moloch}}\xspace}
 \usepackage[backend=biber,style=authoryear,url=false,doi=false,isbn=false,eprint=false]{biblatex}
 \addbibresource{literatur.bib}
+\molochset{block=fill}
 
 \newcommand{\defeq}{\vcentcolon=}
 
@@ -23,25 +26,13 @@
 \institute{Universität Leipzig}
 \date{\today}
 
-\AtBeginSection[]{
-    \begin{frame}
-        \tableofcontents[currentsection]
-    \end{frame}
-}
-
-\AtBeginSubsection[]{
-    \begin{frame}
-        \tableofcontents[currentsubsection]
-    \end{frame}
-}
-
 \begin{document}
-    \begin{frame}
-        \titlepage
-    \end{frame}
 
-    \begin{frame}
-        \tableofcontents
+    \maketitle
+
+    \begin{frame}{Inhalt}
+      \setbeamertemplate{section in toc}[sections numbered]
+      \tableofcontents%[hideallsubsections]
     \end{frame}
 
     \section{Literatur}
